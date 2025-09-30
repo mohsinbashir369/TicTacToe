@@ -1,0 +1,242 @@
+/* Base Styles & Background */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #1f1f1f;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.3),
+                0 0 15px rgba(255, 0, 255, 0.2);
+    text-align: center;
+    max-width: 90%;
+}
+
+h1 {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+/* Selection Panel Styles */
+#selection-panel {
+    margin-bottom: 30px;
+}
+
+.selection-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    padding: 10px;
+    border: 1px dashed rgba(0, 255, 255, 0.4);
+    border-radius: 5px;
+}
+
+label {
+    color: #00ff7f;
+}
+
+.neon-select {
+    background-color: #0d0d0d;
+    color: #ff33cc;
+    border: 1px solid #ff33cc;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(255, 51, 204, 0.5);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+}
+
+.neon-select:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.start-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+}
+
+/* Game Controls Layout */
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Game Status Message */
+.status-message {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    padding: 10px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #00ffff;
+    min-height: 1.5em;
+}
+
+/* Game Board, Cell Styles, Symbols */
+/* ... (Keep previous CSS code above this) ... */
+
+/* Game Board, Cell Styles, Symbols */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 30px auto; 
+    
+    /* --- NEW ADDITION FOR CENTERING GRID ITEMS --- */
+    justify-content: center; 
+    /* This ensures the grid tracks (the 3 columns) are centered within the available space */
+    
+    border: 5px solid #ff00ff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #0d0d0d;
+}
+
+/* ... (Keep the rest of your CSS code below this) ... */
+
+.cell {
+    background-color: #2a2a2a;
+    border: 3px solid #00ffff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.3s;
+    user-select: none;
+    line-height: 1;
+}
+
+.cell:hover {
+    background-color: #3a3a3a;
+    transform: scale(1.03);
+}
+
+.cell.x {
+    color: #00ff7f;
+    text-shadow: 0 0 10px rgba(0, 255, 127, 0.8);
+}
+
+.cell.o {
+    color: #ff33cc;
+    text-shadow: 0 0 10px rgba(255, 51, 204, 0.8);
+}
+
+.cell.win {
+    background-color: #5500ff;
+    box-shadow: 0 0 20px rgba(85, 0, 255, 1);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* Neon Button (Shared Styles) */
+.neon-button {
+    background: none;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Specific Button Styles */
+.neon-button { /* Default style (Restart/Start/Play Again) */
+    color: #ff00ff;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 5px #ff00ff, 0 0 20px #ff00ff, 0 0 35px #ff00ff;
+}
+
+.neon-button:hover {
+    background-color: #ff00ff;
+    color: #121212;
+    box-shadow: 0 0 15px #ff00ff, 0 0 45px #ff00ff;
+}
+
+.back-button { /* Distinct color for Go Back/Change Mode */
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 5px #00ffff, 0 0 20px #00ffff, 0 0 35px #00ffff;
+}
+
+.back-button:hover {
+    background-color: #00ffff;
+    color: #121212;
+    box-shadow: 0 0 15px #00ffff, 0 0 45px #00ffff;
+}
+
+.neon-button:active {
+    transform: scale(0.98);
+}
+
+
+/* Winner Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px #ff00ff, 0 0 20px #00ffff;
+    text-align: center;
+    animation: popin 0.3s ease-out;
+}
+
+@keyframes popin {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+#modal-message {
+    font-size: 3em;
+    color: #00ff7f;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #00ff7f;
+}
+
+.modal-content .neon-button {
+    margin: 10px;
+    padding: 15px 30px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe 🤖</h1>
+        
+        <div id="selection-panel">
+            <div class="selection-group">
+                <label for="gameMode">Game Mode:</label>
+                <select id="gameMode" class="neon-select">
+                    <option value="player">2 Players</option>
+                    <option value="ai">Vs Computer</option>
+                </select>
+            </div>
+
+            <div class="selection-group" id="difficulty-group" style="display:none;">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty" class="neon-select">
+                    <option value="easy">Easy (Random)</option>
+                    <option value="medium">Medium (Block/Attack)</option>
+                    <option value="hard">Hard (Unbeatable Minimax)</option>
+                </select>
+            </div>
+            
+            <button id="startGameButton" class="neon-button start-button">Start Game</button>
+        </div>
+        <div id="game-area" style="display:none;">
+            <div id="gameStatus" class="status-message"></div>
+
+            <div class="game-board" id="gameBoard">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+
+            <div class="game-controls">
+                <button id="resetButton" class="neon-button">Restart Game</button>
+                <button id="backButton" class="neon-button back-button">Go Back</button>
+            </div>
+        </div>
+        <div id="winner-modal" class="modal-overlay" style="display:none;">
+            <div class="modal-content">
+                <h2 id="modal-message"></h2>
+                <button id="modal-newgame" class="neon-button">Play Again</button>
+                <button id="modal-back" class="neon-button back-button">Go Back</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
