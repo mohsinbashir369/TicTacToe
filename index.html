@@ -3,38 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tic-Tac-Toe</title>
+    <title>Tic-Tac-Toe Game</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="container">
-        <h1>Tic-Tac-Toe 🤖</h1>
-        
-        <div id="selection-panel">
-            <div class="selection-group">
-                <label for="gameMode">Game Mode:</label>
-                <select id="gameMode" class="neon-select">
-                    <option value="player">2 Players</option>
-                    <option value="ai">Vs Computer</option>
-                </select>
-            </div>
+        <h1>Tic-Tac-Toe</h1>
 
-            <div class="selection-group" id="difficulty-group" style="display:none;">
-                <label for="difficulty">Difficulty:</label>
-                <select id="difficulty" class="neon-select">
-                    <option value="easy">Easy (Random)</option>
-                    <option value="medium">Medium (Block/Attack)</option>
-                    <option value="hard">Hard (Unbeatable Minimax)</option>
-                </select>
-            </div>
-            
-            <button id="startGameButton" class="neon-button start-button">Start Game</button>
+        <div id="mode-selection">
+            <button id="two-player-btn" onclick="setMode('2P')">2 Players</button>
+            <button id="vs-computer-btn" onclick="showDifficulty()">Vs Computer</button>
         </div>
-        <div id="game-area" style="display:none;">
-            <div id="gameStatus" class="status-message"></div>
 
-            <div class="game-board" id="gameBoard">
+        <div id="difficulty-selection" class="hidden">
+            <p>Select Difficulty:</p>
+            <button onclick="setMode('CPU_EASY')">Easy</button>
+            <button onclick="setMode('CPU_HARD')">Hard</button>
+            <button onclick="resetGame()">Back</button>
+        </div>
+        
+        <div id="game-container" class="hidden">
+            <p id="message">Player X's Turn</p>
+            
+            <div id="board">
                 <div class="cell" data-index="0"></div>
                 <div class="cell" data-index="1"></div>
                 <div class="cell" data-index="2"></div>
@@ -46,19 +38,9 @@
                 <div class="cell" data-index="8"></div>
             </div>
 
-            <div class="game-controls">
-                <button id="resetButton" class="neon-button">Restart Game</button>
-                <button id="backButton" class="neon-button back-button">Go Back</button>
-            </div>
+            <button id="restart-btn" onclick="resetGame()">Restart/Change Mode</button>
         </div>
-        <div id="winner-modal" class="modal-overlay" style="display:none;">
-            <div class="modal-content">
-                <h2 id="modal-message"></h2>
-                <button id="modal-newgame" class="neon-button">Play Again</button>
-                <button id="modal-back" class="neon-button back-button">Go Back</button>
-            </div>
-        </div>
-
+        
     </div>
 
     <script src="script.js"></script>
