@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe Game</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -38,9 +39,11 @@
                 <div class="cell" data-index="8"></div>
             </div>
 
-            <button id="restart-btn" onclick="resetGame()">Restart/Change Mode</button>
+            <div id="game-actions" style="margin-top: 15px;">
+                <button id="play-again-btn" onclick="playAgain()" class="hidden">Play Again</button>
+                <button id="restart-btn" onclick="resetGame()">Restart/Change Mode</button>
+            </div>
         </div>
-        
     </div>
 
     <script src="script.js"></script>
